@@ -23,4 +23,6 @@ Docker is a great choice to harmonize configuration (node/npm/yarn version), mak
 #### Run with docker-compose 
 
 
-## Timeline of build
+## Timeline of progression
+
+- 9h50pm -> 10h15pm(25mins) : Refactor in TypeScript

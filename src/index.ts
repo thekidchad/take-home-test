@@ -1,5 +1,5 @@
 import { Drug, Pharmacy } from './services';
-import fs from 'fs';
+import * as fs from 'fs';
 
 const drugs = [
   new Drug('Doliprane', 20, 30),
@@ -9,19 +9,16 @@ const drugs = [
 ];
 const pharmacy = new Pharmacy(drugs);
 
-const log = [];
+const log: Array<unknown> = [];
 
 for (let elapsedDays = 0; elapsedDays < 30; elapsedDays++) {
   log.push(JSON.parse(JSON.stringify(pharmacy.updateBenefitValue())));
 }
 
-/* eslint-disable no-console */
-fs.writeFile('output.json', JSON.stringify({ result: log }, null, 2).concat('\n'), (err) => {
+fs.writeFile('output/output.json', JSON.stringify({ result: log }, null, 2).concat('\n'), (err) => {
   if (err) {
-    console.log('error');
+    console.error('Error writing file:', err);
   } else {
-    console.log('success');
+    console.log('File written successfully');
   }
 });
-
-/* eslint-enable no-console */
