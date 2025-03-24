@@ -1,0 +1,11 @@
+version: "3"
+services:
+    test-legalplace:
+        container_name: test-legalplace
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/app/
+            - /app/node_modules
+            - ./output:/app/output
