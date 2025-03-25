@@ -17,8 +17,8 @@ for (let elapsedDays = 0; elapsedDays < 30; elapsedDays++) {
 
 fs.writeFile('output/output.json', JSON.stringify({ result: log }, null, 2).concat('\n'), (err) => {
   if (err) {
-    console.error('Error writing file:', err);
+    console.log('error');
   } else {
-    console.log('File written successfully');
+    console.log('success');
   }
 });
